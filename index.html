@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f5">
+  <title>Meus Links | 💗</title>
+
+  <!-- Ícones dos aplicativos -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --rosa: #ff7eb3;
+      --rosa-claro: #ffe0ed;
+      --rosa-escuro: #d94f89;
+      --branco: #ffffff;
+      --texto: #75465d;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at 15% 15%, #ffe0ed 0, transparent 30%),
+        radial-gradient(circle at 90% 75%, #ffd6e8 0, transparent 30%),
+        linear-gradient(135deg, #fffafd, #fff0f6, #ffffff);
+      display: flex;
+      justify-content: center;
+      padding: 45px 20px;
+      overflow-x: hidden;
+    }
+
+    /* Brilhos decorativos */
+    .decoracao {
+      position: fixed;
+      color: #ff9dc5;
+      opacity: 0.55;
+      pointer-events: none;
+      animation: flutuar 4s ease-in-out infinite;
+    }
+
+    .estrela1 {
+      top: 12%;
+      left: 9%;
+      font-size: 25px;
+    }
+
+    .estrela2 {
+      top: 35%;
+      right: 9%;
+      font-size: 32px;
+      animation-delay: 1s;
+    }
+
+    .estrela3 {
+      bottom: 12%;
+      left: 12%;
+      font-size: 28px;
+      animation-delay: 2s;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-12px) rotate(12deg); }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Cabeçalho */
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.72);
+      border: 2px solid rgba(255, 126, 179, 0.35);
+      box-shadow: 0 8px 30px #f7a5c544;
+      font-size: 42px;
+      animation: aparecer 1s ease;
+    }
+
+    h1 {
+      font-size: clamp(28px, 7vw, 38px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--rosa-escuro);
+    }
+
+    .subtitulo {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #9c7186;
+    }
+
+    .boas-vindas {
+      margin: 26px 0 32px;
+      padding: 17px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 25px #e89abb18;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .boas-vindas strong {
+      color: var(--rosa-escuro);
+    }
+
+    /* Título da seção */
+    .secao-titulo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .secao-titulo span {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, #f2a2c4);
+    }
+
+    .secao-titulo span:last-child {
+      background: linear-gradient(90deg, #f2a2c4, transparent);
+    }
+
+    .secao-titulo h2 {
+      font-size: 16px;
+      font-weight: 600;
+      white-space: nowrap;
+      color: #c65d8c;
+    }
+
+    /* Barras glass */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      min-height: 66px;
+      padding: 12px 20px;
+      border-radius: 19px;
+      text-decoration: none;
+      color: var(--texto);
+
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow:
+        0 8px 24px rgba(219, 117, 162, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+      animation: subir 0.65s both;
+    }
+
+    .link:nth-child(2) { animation-delay: 0.08s; }
+    .link:nth-child(3) { animation-delay: 0.16s; }
+    .link:nth-child(4) { animation-delay: 0.24s; }
+    .link:nth-child(5) { animation-delay: 0.32s; }
+    .link:nth-child(6) { animation-delay: 0.40s; }
+
+    .link:hover {
+      transform: translateY(-4px) scale(1.015);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 12px 30px #e78ebc38;
+      border-color: #ffc3dc;
+    }
+
+    .icone {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 14px;
+      background: #fff0f6;
+      color: var(--rosa-escuro);
+      font-size: 21px;
+    }
+
+    .instagram .icone {
+      background: linear-gradient(135deg, #fff0f7, #ffe0ed);
+      color: #d94f89;
+    }
+
+    .tiktok .icone {
+      color: #29202a;
+    }
+
+    .youtube .icone {
+      color: #f04b75;
+    }
+
+    .whatsapp .icone {
+      color: #239b68;
+      background: #eafff2;
+    }
+
+    .discord .icone {
+      color: #6961dc;
+      background: #f0efff;
+    }
+
+    .link-nome {
+      flex: 1;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .link-descricao {
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
+      color: #a58a98;
+      font-weight: 400;
+    }
+
+    .seta {
+      color: #dba0bb;
+      font-size: 13px;
+      transition: transform 0.25s ease;
+    }
+
+    .link:hover .seta {
+      transform: translateX(4px);
+      color: var(--rosa-escuro);
+    }
+
+    /* Rodapé */
+    footer {
+      margin-top: 34px;
+      font-size: 11px;
+      color: #b38ca0;
+      line-height: 2;
+    }
+
+    footer .coracao {
+      color: #ee75a6;
+    }
+
+    @keyframes subir {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 35px 22px;
+      }
+
+      .link {
+        min-height: 64px;
+        padding: 10px 15px;
+      }
+
+      .boas-vindas {
+        margin: 22px 0 28px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="decoracao estrela1">✧</div>
+  <div class="decoracao estrela2">♡</div>
+  <div class="decoracao estrela3">✦</div>
+
+  <main class="container">
+
+    <!-- TOPO: personalize o título e o emoji -->
+    <div class="logo">🎀</div>
+
+    <h1>Meu Cantinho</h1>
+    <p class="subtitulo">um pouquinho do meu mundo ♡</p>
+
+    <!-- BOAS-VINDAS -->
+    <section class="boas-vindas">
+      <p>
+        Oii, seja muito bem-vindo(a)! 💗
+        <br>
+        <strong>Fico feliz em ter você aqui!</strong>
+        <br>
+        Escolha uma das opções abaixo e vem me acompanhar
+        nas minhas redes sociais. ✨
+      </p>
+    </section>
+
+    <!-- PERFIS -->
+    <section>
+      <div class="secao-titulo">
+        <span></span>
+        <h2>♡ Meus perfis ♡</h2>
+        <span></span>
+      </div>
+
+      <div class="links">
+
+        <a class="link instagram"
+           href="https://instagram.com/SEUUSUARIO"
+           target="_blank" rel="noopener noreferrer">
+          <div class="icone">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="link-nome">
+            Instagram
+            <span class="link-descricao">Fotos, stories e momentos 💕</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square seta"></i>
+        </a>
+
+        <a class="link tiktok"
+           href="https://tiktok.com/@SEUUSUARIO"
+           target="_blank" rel="noopener noreferrer">
+          <div class="icone">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+          <div class="link-nome">
+            TikTok
+            <span class="link-descricao">Vídeos e diversão ✨</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square seta"></i>
+        </a>
+
+        <a class="link youtube"
+           href="https://youtube.com/@SEUUSUARIO"
+           target="_blank" rel="noopener noreferrer">
+          <div class="icone">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="link-nome">
+            YouTube
+            <span class="link-descricao">Vídeos novos por aqui 🎬</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square seta"></i>
+        </a>
+
+        <a class="link whatsapp"
+           href="https://wa.me/55SEUNUMERO"
+           target="_blank" rel="noopener noreferrer">
+          <div class="icone">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="link-nome">
+            WhatsApp
+            <span class="link-descricao">Vamos conversar? 💌</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square seta"></i>
+        </a>
+
+        <a class="link discord"
+           href="https://discord.com/users/SEUID"
+           target="_blank" rel="noopener noreferrer">
+          <div class="icone">
+            <i class="fa-brands fa-discord"></i>
+          </div>
+          <div class="link-nome">
+            Discord
+            <span class="link-descricao">Nos encontramos por lá 🎮</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square seta"></i>
+        </a>
+
+      </div>
+    </section>
+
+    <footer>
+      feito com <span class="coracao">♥</span> e muito carinho
+      <br>
+      © <span id="ano"></span> • todos os direitos reservados
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
